@@ -4,17 +4,17 @@ import { Card } from "semantic-ui-react";
 
 function PokemonCollection({listArr}) {
 
-  console.log(listArr)
+  // console.log(listArr)
 
   let allPokemon = listArr.map((item)=> {
   return <PokemonCard 
   id={item.id}
+  key={item.id}
   name={item.name}
   hp={item.hp}
   sprites={item.sprites}
   /> 
   }) 
-
 
 
   return (

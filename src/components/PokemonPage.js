@@ -16,6 +16,12 @@ function PokemonPage() {
     .then(data=> setListArr(data) )
   },[])
 
+  function searchList(input){
+    console.log(input)
+    let refinedArr = listArr.filter((item)=> item.name.includes(input))
+    setListArr(refinedArr)
+  }
+
 
 
   return (
@@ -24,7 +30,7 @@ function PokemonPage() {
       <br />
       <PokemonForm />
       <br />
-      <Search />
+      <Search searchList={searchList} />
       <br />
       <PokemonCollection listArr={listArr} />
     </Container>
