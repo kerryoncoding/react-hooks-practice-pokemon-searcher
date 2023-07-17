@@ -11,7 +11,7 @@ function PokemonCollection({listArr}) {
   id={item.id}
   name={item.name}
   hp={item.hp}
-  sprites={item.sprites.front}
+  sprites={item.sprites}
   /> 
   }) 
 
