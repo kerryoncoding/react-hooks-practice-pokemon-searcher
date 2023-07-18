@@ -22,13 +22,26 @@ function PokemonPage() {
     setListArr(refinedArr)
   }
 
+  function handleNewPokemon(item){
+    console.log(item)
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(item)
+    })
+    .then(res => res.json())
+    .then(data=> {setListArr([...listArr, item]) 
+    })
+  }
 
 
   return (
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm handleNewPokemon={handleNewPokemon}/>
       <br />
       <Search searchList={searchList} />
       <br />
